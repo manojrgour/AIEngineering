@@ -1,0 +1,11 @@
+fastapi
+uvicorn[standard]
+sqlalchemy
+pydantic
+pytest
+httpx
+psycopg2-binary
+sentence-transformers
+faiss-cpu
+qdrant-client==1.16.2
+python-dotenv

@@ -1,0 +1,50 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "FAQ Document Schema",
+  "description": "Schema for FAQ entries stored in Cosmos DB with embeddings",
+  "type": "object",
+  "properties": {
+    "id": {
+      "type": "string",
+      "description": "Unique identifier for the FAQ entry"
+    },
+    "source": {
+      "type": "string",
+      "description": "Origin of the FAQ (e.g., PetStore_FAQ)"
+    },
+    "type": {
+      "type": "string",
+      "enum": ["faq"],
+      "description": "Document type, fixed as 'faq'"
+    },
+    "question": {
+      "type": "string",
+      "description": "FAQ question text"
+    },
+    "answer": {
+      "type": "string",
+      "description": "FAQ answer text"
+    },
+    "tags": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "description": "Tags for filtering and categorization"
+    },
+    "timestamp": {
+      "type": "string",
+      "format": "date-time",
+      "description": "Time when the FAQ was ingested"
+    },
+    "embedding": {
+      "type": "array",
+      "items": {
+        "type": "number"
+      },
+      "description": "Vector embedding of the FAQ text"
+    }
+  },
+  "required": ["id", "source", "type", "question", "answer", "embedding"],
+  "additionalProperties": false
+}
